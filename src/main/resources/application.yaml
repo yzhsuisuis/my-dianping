@@ -1,0 +1,31 @@
+server:
+  port: 8082
+  servlet:
+    context-path: /api
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/hmdp2?useSSL=false&serverTimezone=UTC
+    username: root
+    password: 1234
+  redis:
+    host: 192.168.213.135
+    port: 6378
+    password: 123456
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+mybatis-plus:
+  type-aliases-package: com.hmdp.entity # 别名扫描包
+# 布隆过滤器配置
+bloom-filter:
+  expected-insertions: 1000000  # 期望插入的元素数量
+  fpp: 0.01  # 误判率
