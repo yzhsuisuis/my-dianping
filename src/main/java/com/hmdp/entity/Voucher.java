@@ -11,6 +11,11 @@ import lombok.experimental.Accessors;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+
+/**
+ * Voucher比较特殊,他包含了seckill表中的一些属性,而这一部分是他没有的所以用@TableField(exist = false)
+ *
+ */
 @Data
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)

@@ -172,7 +172,8 @@ public class CacheClient {
         if(StrUtil.isNotBlank(json))
         {
             //字符串不是null 也不是空串 "";
-            return JSONUtil.toBean(json, type);
+            R r = JSONUtil.toBean(json, type);
+            return r;
         }
         if(json!= null)
         {

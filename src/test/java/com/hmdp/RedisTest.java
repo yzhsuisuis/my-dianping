@@ -19,6 +19,7 @@ import java.util.concurrent.TimeUnit;
 import static com.hmdp.utils.RedisConstants.CACHE_SHOP_KEY;
 
 @SpringBootTest
+
 public class RedisTest {
     @Resource
     private StringRedisTemplate stringRedisTemplate;
@@ -32,8 +33,8 @@ public class RedisTest {
     @Test
     void test01()
     {
-        Jedis jedis = new Jedis("192.168.213.135", 6378);
-        jedis.auth("123456");
+        Jedis jedis = new Jedis("127.0.0.1", 6379);
+//        jedis.auth("123456");
         jedis.set("yangbo","1234");
         jedis.get("yangbo");
         jedis.close();
